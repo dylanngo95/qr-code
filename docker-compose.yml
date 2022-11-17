@@ -23,16 +23,16 @@ services:
       - "443:443"
     volumes:
       - ${PROJECT_PATH}:/var/www/html
-      - ./.docker/config/nginx/local.crt:/var/www/ssl/local.crt
-      - ./.docker/config/nginx/local.key:/var/www/ssl/local.key
-      - ./.docker/conf/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./.docker/nginx/local.crt:/var/www/ssl/local.crt
+      - ./.docker/nginx/local.key:/var/www/ssl/local.key
+      - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./log/nginx:/var/log/nginx
     networks:
       - app
   php:
     image: dylanops/php:8.1
     restart: always
-    container_name: php
+    container_name: php81
     volumes:
       - ${PROJECT_PATH}:/var/www/html
     networks:
