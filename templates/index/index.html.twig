@@ -5,19 +5,28 @@
 {% block body %}
     <p class="fs-1">Courts QRCode</p>
     <div class="row">
-        <div class="btn-group" role="group" aria-label="change status group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-            <label class="btn btn-outline-primary" for="btnradio1">Push Order To Detrack</label>
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-success" for="btnradio2">Ready To Ship</label>
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-warning" for="btnradio3">Mark Quantity Issue</label>
+        <div id="reader"></div>
+        <input id="qrcode" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        <script defer src="{{ asset('js/html5-qrcode.min.js') }}"></script>
+        <script defer src="{{ asset('js/qrcode.js') }}"></script>
+    </div>
+    <div class="row">
+        <div class="btn-group" role="group" aria-label="Change status group">
+            <button type="button" class="btn btn-primary">Push To Detrack</button>
+            <button type="button" class="btn btn-success">Ready To Ship</button>
+            <button type="button" class="btn btn-warning">Quantity Issue</button>
         </div>
     </div>
     <div class="row">
-        <div id="reader"></div>
-        <button type="button" class="btn btn-primary btn-lg">Push Order To Detrack</button>
-        <script defer src="{{ asset('js/html5-qrcode.min.js') }}"></script>
-        <script defer src="{{ asset('js/qrcode.js') }}"></script>
+        <p class="fs-1">History </p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
     </div>
 {% endblock %}
