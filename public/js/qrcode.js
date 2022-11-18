@@ -10,5 +10,5 @@ function onScanError(errorMessage) {
     $("#qrcode").val("error");
 }
 
-var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 400 });
 html5QrcodeScanner.render(onScanSuccess, onScanError);
