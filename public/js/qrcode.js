@@ -1,14 +1,20 @@
 function onScanSuccess(decodedText, decodedResult) {
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result: ${decodedText}`, decodedResult);
-    $("#qrcode").val(decodedText);
+    $("#qr-code").val(decodedText);
 }
 
-function onScanError(errorMessage) {
+function onScanFailure(errorMessage) {
     // handle on error condition, with error message
     console.log(`Scan result: ${errorMessage}`);
-    $("#qrcode").val(errorMessage);
+    $("#qr-code").val(errorMessage);
 }
 
-var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 400 });
-html5QrcodeScanner.render(onScanSuccess, onScanError);
+// Note: If you change the DOM element id here (example: "html5_qrcode_reader")
+// Also, change this in ../html5-qrcode-wp.php.
+let html5QrcodeScanner = new Html5QrcodeScanner(
+    "qr-reader",
+    // TODO(mebjas): Load all these values using data arguments in DOM element.
+    { fps: 10, qrbox: {width: 250, height: 250} },
+    /* verbose= */ false);
+html5QrcodeScanner.render(onScanSuccess, onScanFailure);
