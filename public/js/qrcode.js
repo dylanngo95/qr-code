@@ -3,14 +3,12 @@ function onScanSuccess(decodedText, decodedResult) {
     console.log(`Scan result: ${decodedText}`, decodedResult);
     $('#qr-code').val(decodedText);
     $('#exampleModal').modal('show');
-    html5QrcodeScanner.clear();
 }
 
 function onScanFailure(errorMessage) {
     // handle on error condition, with error message
     console.log(`Scan result: ${errorMessage}`);
     $('#qr-code').val(errorMessage);
-    // $('#exampleModal').modal('show');
 }
 
 $('#exampleModal').on('show.bs.modal', function (event) {

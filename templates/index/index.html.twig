@@ -4,9 +4,23 @@
 
 {% block body %}
     <p class="fs-1">Courts QRCode</p>
+    <div class="d-flex justify-content-center">
+        <div style="width: 400px" id="qr-reader"></div>
+    </div>
     <div class="row">
-        <div id="qr-reader"></div>
-        <input id="qr-code" type="text" >
+        <input id="qr-code" class="form-control" type="text" >
+        <div id="qr-code-result" class="alert alert-primary" role="alert">History</div>
+    </div>
+    <div class="row">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
     </div>
     <div class="row">
         <!-- Modal -->
@@ -29,18 +43,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <p class="fs-1">History </p>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
     </div>
     <script src="{{ asset('js/html5-qrcode.min.js') }}"></script>
     <script src="{{ asset('js/qrcode.js') }}"></script>
