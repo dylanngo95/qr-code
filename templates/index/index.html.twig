@@ -7,14 +7,27 @@
     <div class="row">
         <div id="qr-reader"></div>
         <input id="qr-code" type="text" >
-        <script src="{{ asset('js/html5-qrcode.min.js') }}"></script>
-        <script src="{{ asset('js/qrcode.js') }}"></script>
     </div>
     <div class="row">
-        <div class="btn-group" role="group" aria-label="Change status group">
-            <button type="button" class="btn btn-primary">Push To Detrack</button>
-            <button type="button" class="btn btn-success">Ready To Ship</button>
-            <button type="button" class="btn btn-warning">Quantity Issue</button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="push-order-to-detrack" type="button" class="btn btn-primary">Push Order To Detrack</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -29,4 +42,6 @@
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
     </div>
+    <script src="{{ asset('js/html5-qrcode.min.js') }}"></script>
+    <script src="{{ asset('js/qrcode.js') }}"></script>
 {% endblock %}
