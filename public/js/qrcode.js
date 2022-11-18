@@ -2,7 +2,6 @@ function onScanSuccess(decodedText, decodedResult) {
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result: ${decodedText}`, decodedResult);
     $("#qrcode").val(decodedText);
-    html5QrcodeScanner.clear();
 }
 
 function onScanError(errorMessage) {
