@@ -12,14 +12,8 @@
         <div id="qr-code-result" class="alert alert-primary" role="alert">History</div>
     </div>
     <div class="row">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+        <ul id="history" class="list-group list-group-flush">
+            <li class="list-group-item">O12345667 - Ready To Ship</li>
         </ul>
     </div>
     <div class="row">
@@ -34,10 +28,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p class="text"></p>
+                        <p class="text">Oder Number: </p>
+                        <p id="order-number" class="text"></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="ready-to-ship" type="button" class="btn btn-secondary" data-dismiss="modal">Ready To Ship</button>
                         <button id="push-order-to-detrack" type="button" class="btn btn-primary">Push Order To Detrack</button>
                     </div>
                 </div>

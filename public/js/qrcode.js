@@ -11,19 +11,6 @@ function onScanFailure(errorMessage) {
     $('#qr-code').val(errorMessage);
 }
 
-$('#exampleModal').on('show.bs.modal', function (event) {
-    var qrcode = $('#qr-code').val();
-
-    var modal = $(this);
-    modal.find('.modal-title').text('Confirm Form');
-    modal.find('.modal-body .text').text('Order Number: ' + qrcode);
-});
-
-$('#push-order-to-detrack').click(() => {
-    console.log('hi');
-    $('#exampleModal').modal('toggle');
-});
-
 let html5QrcodeScanner = new Html5QrcodeScanner(
     'qr-reader',
     {
@@ -33,3 +20,36 @@ let html5QrcodeScanner = new Html5QrcodeScanner(
     /* verbose= */ false
 );
 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+
+var url = 'https://staging.courts.com.sg/ecourts/detrack/index/id/';
+
+// Push Order
+$('#exampleModal').on('show.bs.modal', function (event) {
+    var qrcode = $('#qr-code').val();
+
+    var modal = $(this);
+    modal.find('.modal-title').text('Confirmation');
+    modal.find('.modal-body #order-number').text(qrcode);
+});
+
+$('#push-order-to-detrack').click(() => {
+    $('#exampleModal').modal('toggle');
+});
+
+$('#ready-to-ship').click(() => {
+    readyToShip();
+    $('#exampleModal').modal('toggle');
+});
+
+function readyToShip() {
+    var orderNumber = $('.modal-body #order-number').text();
+    var readyToShip = 4;
+    var readyToShipUrl = url + orderNumber + '/' + readyToShip;
+    $.ajax({
+        type: "GET",
+        url: readyToShipUrl,
+        success: function (response) {
+            console.log(response);
+        },
+    });
+}
