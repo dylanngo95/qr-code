@@ -7,7 +7,7 @@ function onScanSuccess(decodedText, decodedResult) {
 function onScanError(errorMessage) {
     // handle on error condition, with error message
     console.log(`Scan result: ${errorMessage}`);
-    $("#qrcode").val("");
+    $("#qrcode").val("error");
 }
 
 var html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
